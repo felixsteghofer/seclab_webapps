@@ -9,7 +9,7 @@ global $htbconf;
 
 $xorValue	= 0x0BADC0DE;
 // paths
-$htbconf['paths/prefix']	= '/opt/vbank/';
+$htbconf['paths/prefix']	= '//opt/lampp/htdocs/vbank/';
 $htbconf['paths/pages']	= 'pages/';
 
 // url of this bank
