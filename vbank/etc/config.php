@@ -9,12 +9,12 @@ global $htbconf;
 
 $xorValue	= 0x0BADC0DE;
 // paths
-$htbconf['paths/prefix']	= '//opt/lampp/htdocs/seclab_webapps/vbank/';
-$htbconf['paths/pages']	= 'pages/';
+$htbconf['paths/prefix'] = getenv('VBANK_PREFIX') ?: '//opt/lampp/htdocs/seclab_webapps/vbank/';
+$htbconf['paths/pages']	= getenv('VBANK_PAGES') ?: 'pages/';
 
 // url of this bank
 // $htbconf['web/baseurl']	= 'http://www.unsecurito.it/';
-$htbconf['web/baseurl']	= 'http://127.0.0.1/';
+$htbconf['web/baseurl']	= getenv('VBANK_BASEURL') ?: 'http://127.0.0.1/';
 
 // Bank description
 $htbconf['bank/name']	= 'Unsecurito Italiano';
@@ -95,10 +95,10 @@ $htbconf['db/users.lasttime']	= 'lasttime';
 $htbconf['db/users.lastip']		= 'lastip';
 
 // Application account for access to database
-$htbconf['db/.server']	= '127.0.0.1';
-$htbconf['db/.login']	= 'root';
-$htbconf['db/.pwd']		= 'softsec';
-$htbconf['db/.name']	= 'vbank';
+$htbconf['db/.server']	= getenv('VBANK_DBSERVER') ?: '127.0.0.1';
+$htbconf['db/.login']	= getenv('VBANK_DBLOGIN') ?: 'root';
+$htbconf['db/.pwd']		= getenv('VBANK_DBPASSWD') ?: 'softsec';
+$htbconf['db/.name']	= getenv('VBANK_DBNAME') ?:  'vbank';
 
 date_default_timezone_set('Europe/Berlin');
 ?>
